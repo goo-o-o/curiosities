@@ -1,4 +1,4 @@
-package com.goo.curiosities.common.item.curio.back;
+package com.goo.curiosities.common.item.curio.back.quiver;
 
 import com.goo.curiosities.common.item.QuiverCurioItem;
 import net.minecraft.world.damagesource.DamageSource;
@@ -10,15 +10,16 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 
-public class ScoutsQuiver extends QuiverCurioItem {
-    public ScoutsQuiver(Properties properties) {
+public class QuiverOfDecay extends QuiverCurioItem {
+    public QuiverOfDecay(Properties properties) {
         super(properties);
     }
 
     @Override
     public void onWearerHit(LivingEntity attacker, Entity victim, ItemStack curio, DamageSource source, LivingDamageEvent.Pre event) {
         if (source.is(DamageTypes.ARROW)) {
-            attacker.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 60, 1), attacker);
+            if (victim instanceof LivingEntity livingEntity)
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, 60, 1), attacker);
         }
     }
 }

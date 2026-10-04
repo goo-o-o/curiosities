@@ -3,6 +3,7 @@ package com.goo.curiosities.common.event;
 import com.goo.curiosities.common.Curiosities;
 import com.goo.curiosities.common.item.AnkletCurioItem;
 import com.goo.curiosities.common.item.CuriositiesCurioItem;
+import com.goo.curiosities.common.item.curio.charm.Gasoline;
 import com.goo.curiosities.common.registry.CuriositiesEffects;
 import com.goo.curiosities.common.registry.CuriositiesItems;
 import com.goo.curiosities.util.CurioUtil;
@@ -74,6 +75,8 @@ public class LivingEvents {
         if (cause instanceof LivingEntity killer) {
             CuriositiesCurioItem.Hooks.applyOnWearerKill(killer, victim, damageSource, event);
         }
+
+        Gasoline.proc(damageSource, victim);
 
     }
 

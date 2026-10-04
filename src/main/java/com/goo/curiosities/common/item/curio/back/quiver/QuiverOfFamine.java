@@ -1,25 +1,28 @@
-package com.goo.curiosities.common.item.curio.back;
+package com.goo.curiosities.common.item.curio.back.quiver;
 
 import com.goo.curiosities.common.item.QuiverCurioItem;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 
-public class StalkersQuiver extends QuiverCurioItem {
-    public StalkersQuiver(Properties properties) {
+public class QuiverOfFamine extends QuiverCurioItem {
+    public QuiverOfFamine(Properties properties) {
         super(properties);
     }
 
     @Override
     public void onWearerHit(LivingEntity attacker, Entity victim, ItemStack curio, DamageSource source, LivingDamageEvent.Pre event) {
         if (source.is(DamageTypes.ARROW)) {
-            if (victim instanceof Mob mob) {
-                if (mob.getTarget() != attacker) {
-                    event.setNewDamage(event.getNewDamage() * 1.5F);
+            if (victim instanceof LivingEntity livingEntity) {
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 20, 99), attacker);
+                if (livingEntity instanceof Player player) {
+                    event.setNewDamage(event.getNewDamage() + (20 - player.getFoodData().getFoodLevel()));
                 }
             }
         }

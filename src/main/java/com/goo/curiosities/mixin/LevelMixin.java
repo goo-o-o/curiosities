@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(Level.class)
 public class LevelMixin {
     @ModifyReturnValue(method = "shouldTickBlocksAt(Lnet/minecraft/core/BlockPos;)Z", at = @At("RETURN"))
-    private boolean curiosities$freezeInsideTimeStopField(boolean original, BlockPos pos) {
+    private boolean freezeInsideTimeStopField(boolean original, BlockPos pos) {
         if (!original) return false; // already false, no reason to fight it
 
         Level self = (Level) (Object) this;

@@ -51,6 +51,9 @@ public class CuriositiesParticles {
     public static final DeferredHolder<ParticleType<?>, ParticleType<WaveParticleOption>> FIRE_WAVE =
             PARTICLE_TYPES.register("fire_wave", () -> new WaveParticleType(false));
 
+    public static final DeferredHolder<ParticleType<?>, ParticleType<TrailParticleOption>> MISSILE_TRAIL =
+            PARTICLE_TYPES.register("missile_trail", () -> new TrailParticleType(false));
+
     
 
 }

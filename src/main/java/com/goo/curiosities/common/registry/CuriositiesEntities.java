@@ -4,6 +4,7 @@ package com.goo.curiosities.common.registry;
 import com.goo.curiosities.common.Curiosities;
 import com.goo.curiosities.common.entity.GlitchField;
 import com.goo.curiosities.common.entity.HoneyGlobuleEntity;
+import com.goo.curiosities.common.entity.MissileEntity;
 import com.goo.curiosities.common.entity.TimeStopField;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
@@ -14,6 +15,13 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class CuriositiesEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(Registries.ENTITY_TYPE, Curiosities.MOD_ID);
 
+
+    public static final DeferredHolder<EntityType<?>, EntityType<MissileEntity>> MISSILE = ENTITY_TYPES.register("missile",
+            () -> EntityType.Builder.of(MissileEntity::new, MobCategory.MISC)
+                    .sized(0.25F, 0.25F)
+                    .fireImmune()
+                    .build("missile")
+    );
 
     public static final DeferredHolder<EntityType<?>, EntityType<HoneyGlobuleEntity>> HONEY_GLOBULE = ENTITY_TYPES.register("honey_globule",
             () -> EntityType.Builder.of(HoneyGlobuleEntity::new, MobCategory.MISC)

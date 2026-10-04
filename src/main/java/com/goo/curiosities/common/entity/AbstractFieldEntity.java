@@ -26,6 +26,7 @@ public abstract class AbstractFieldEntity extends Entity {
     public AbstractFieldEntity(EntityType<?> type, Level level, float startRadius) {
         super(type, level);
         this.noPhysics = true;
+        this.startRadius = startRadius;
     }
 
 

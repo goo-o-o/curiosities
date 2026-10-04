@@ -42,6 +42,7 @@ public class CuriositiesItemTagsProvider extends ItemTagsProvider {
 
         tag(ItemTags.DURABILITY_ENCHANTABLE).add(CuriositiesItems.NETHERITE_JETPACK.value());
         tag(CuriositiesTags.Items.RAINBOW_TOOLTIP).add(
+                CuriositiesItems.ELEMENTAL_QUIVER.value(),
                 CuriositiesItems.OMNICHROME_RING.value(),
                 CuriositiesItems.SUPREME_MASTER_ANGLERS_BACKPACK_OF_PEERLESS_FISHING.value(),
                 CuriositiesItems.MOVEMENT_GODS_TRACERS.value()
@@ -53,6 +54,8 @@ public class CuriositiesItemTagsProvider extends ItemTagsProvider {
                 CuriositiesItems.CORRUPTED_DIAMOND.value()
         );
         tag(CuriositiesTags.Items.FIRE_TOOLTIP).add(
+                CuriositiesItems.GASOLINE.value(),
+                CuriositiesItems.EXPLOSIVE_QUIVER.value(),
                 CuriositiesItems.MOLTEN_QUIVER.value(),
                 CuriositiesItems.QUIVER_OF_THE_FIRST_FLAME.value(),
                 CuriositiesItems.PHOENIX_QUIVER.value(),
@@ -109,11 +112,13 @@ public class CuriositiesItemTagsProvider extends ItemTagsProvider {
 
     private void addBackTags() {
         this.tag(CuriosTags.BACK).add(
+                CuriositiesItems.EXPLOSIVE_QUIVER.value(),
                 CuriositiesItems.MAGIC_QUIVER.value(),
                 CuriositiesItems.TOXIC_QUIVER.value(),
                 CuriositiesItems.QUIVER_OF_TEN_THOUSAND_POISONS.value(),
                 CuriositiesItems.QUIVER_OF_DECAY.value(),
                 CuriositiesItems.QUIVER_OF_THE_BLACK_DEATH.value(),
+                CuriositiesItems.ELEMENTAL_QUIVER.value(),
                 CuriositiesItems.INFINIQUIVER.value(),
                 CuriositiesItems.QUIVER_OF_FAMINE.value(),
                 CuriositiesItems.QUIVER_OF_STARVATION.value(),
@@ -126,6 +131,7 @@ public class CuriositiesItemTagsProvider extends ItemTagsProvider {
                 CuriositiesItems.QUIVER_OF_THE_FIRST_FLAME.value(),
                 CuriositiesItems.PHOENIX_QUIVER.value(),
                 CuriositiesItems.SUPREME_MASTER_ANGLERS_BACKPACK_OF_PEERLESS_FISHING.value(),
+                CuriositiesItems.ATG_MISSILE_MK1.value(),
                 CuriositiesItems.NETHERITE_JETPACK.value(),
                 CuriositiesItems.ARCHITECT_GIZMO_PACK.value(),
                 CuriositiesItems.PORTABLE_CONCRETE_MIXER.value()
@@ -135,12 +141,15 @@ public class CuriositiesItemTagsProvider extends ItemTagsProvider {
 
     private void addCharmTags() {
         this.tag(CuriosTags.CHARM).add(
+                CuriositiesItems.FOCUS_CRYSTAL.value(),
+                CuriositiesItems.GASOLINE.value(),
                 CuriositiesItems.MAGNETIC_ARROWHEAD.value(),
                 CuriositiesItems.APPRENTICES_FISHING_BOBBER.value(),
                 CuriositiesItems.JOURNEYMANS_FISHING_BOBBER.value(),
                 CuriositiesItems.EXPERTS_FISHING_BOBBER.value(),
                 CuriositiesItems.MASTERS_FISHING_BOBBER.value(),
                 CuriositiesItems.ECHOING_FISHING_HOOK.value(),
+                CuriositiesItems.WIND_CHARGED_FISHING_HOOK.value(),
                 CuriositiesItems.LAVAPROOF_FISHING_HOOK.value(),
                 CuriositiesItems.COMICALLY_LARGE_SHOVEL_HEAD.value(),
                 CuriositiesItems.ROYAL_JELLY.value(),
@@ -305,6 +314,7 @@ public class CuriositiesItemTagsProvider extends ItemTagsProvider {
                 CuriositiesItems.AMPHIBIAN_BOOTS.value(),
                 CuriositiesItems.SALAMANDERS_STRIDERS.value(),
                 CuriositiesItems.CONSTRUCTION_BOOTS.value(),
+                CuriositiesItems.HIKERS_BOOTS.value(),
                 CuriositiesItems.HONEY_BOOTS.value(),
                 CuriositiesItems.SHOE_SPIKES.value(),
                 CuriositiesItems.LAVA_WALKERS.value(),

@@ -27,6 +27,7 @@ public class CuriositiesEntityRenderers {
         event.registerEntityRenderer(CuriositiesEntities.TIME_STOP_FIELD.value(), NoopRenderer::new);
         event.registerEntityRenderer(CuriositiesEntities.GLITCH_FIELD.value(), NoopRenderer::new);
         event.registerEntityRenderer(CuriositiesEntities.HONEY_GLOBULE.value(), GlobuleRenderer::new);
+        registerWithLayers(event, CuriositiesEntities.MISSILE.value());
     }
 
     /**

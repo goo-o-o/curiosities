@@ -4,8 +4,10 @@ package com.goo.curiosities.mixin;
 import com.goo.curiosities.common.item.FishingLuckModifyingCurioItem;
 import com.goo.curiosities.common.item.IFishingBobberCurioItem;
 import com.goo.curiosities.common.item.IHookedInEntityFishingCurioItem;
+import com.goo.curiosities.common.item.curio.charm.WindChargedFishingHook;
 import com.goo.curiosities.common.registry.CuriositiesItems;
 import com.goo.curiosities.util.CurioUtil;
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.core.particles.ParticleOptions;
@@ -34,6 +36,9 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.event.EventHooks;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -306,4 +311,30 @@ public abstract class FishingHookMixin {
         return original.call(builder, luck);
     }
 
+
+    @WrapMethod(method = "onHitBlock")
+    private void onHitBlock(BlockHitResult result, Operation<Void> original) {
+        original.call(result);
+        Player owner = getPlayerOwner();
+        if (owner != null) {
+            CuriosApi.getCuriosInventory(owner).ifPresent(handler -> {
+                int amount = handler.findCurios(CuriositiesItems.WIND_CHARGED_FISHING_HOOK.value()).size();
+                Vec3 pos = result.getLocation();
+                WindChargedFishingHook.explode(owner, pos, amount);
+            });
+        }
+    }
+
+    @WrapMethod(method = "onHitEntity")
+    private void onHitEntity(EntityHitResult result, Operation<Void> original) {
+        original.call(result);
+        Player owner = getPlayerOwner();
+        if (owner != null) {
+            CuriosApi.getCuriosInventory(owner).ifPresent(handler -> {
+                int amount = handler.findCurios(CuriositiesItems.WIND_CHARGED_FISHING_HOOK.value()).size();
+                Vec3 pos = result.getLocation();
+                WindChargedFishingHook.explode(owner, pos, amount);
+            });
+        }
+    }
 }

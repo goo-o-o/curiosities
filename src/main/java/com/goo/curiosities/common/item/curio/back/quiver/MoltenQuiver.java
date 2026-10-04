@@ -1,4 +1,4 @@
-package com.goo.curiosities.common.item.curio.back;
+package com.goo.curiosities.common.item.curio.back.quiver;
 
 import com.goo.curiosities.common.item.QuiverCurioItem;
 import net.minecraft.core.Holder;

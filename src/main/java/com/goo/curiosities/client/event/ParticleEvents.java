@@ -36,6 +36,7 @@ public class ParticleEvents {
         event.registerSpriteSet(CuriositiesParticles.EMBER.get(), EmberParticle.Provider::new);
         event.registerSpriteSet(CuriositiesParticles.SEISMIC_SHOCKWAVE.get(), AlphaFadeWaveParticle.Provider::new);
         event.registerSpriteSet(CuriositiesParticles.FIRE_WAVE.get(), FireWaveParticle.Provider::new);
+        event.registerSpriteSet(CuriositiesParticles.MISSILE_TRAIL.get(), MissileTrailParticle.Provider::new);
     }
 
 }

@@ -65,6 +65,7 @@ public class CuriositiesItemModelProvider extends ItemModelProvider {
         curio(CuriositiesItems.MOVEMENT_GODS_TRACERS.value(), 1, false, 2);
         curio(CuriositiesItems.BROKEN_CLOCK.value(), 1, true, 1);
         curio(CuriositiesItems.FIERY_ANKLET.value(), 1, false, 1);
+        curio(CuriositiesItems.WIND_CHARGED_FISHING_HOOK.value(), 1, false, 1);
     }
 
 

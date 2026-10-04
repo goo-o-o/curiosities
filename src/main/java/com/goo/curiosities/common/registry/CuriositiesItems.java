@@ -5,6 +5,7 @@ import com.goo.curiosities.common.Curiosities;
 import com.goo.curiosities.common.item.*;
 import com.goo.curiosities.common.item.curio.anklet.*;
 import com.goo.curiosities.common.item.curio.back.*;
+import com.goo.curiosities.common.item.curio.back.quiver.*;
 import com.goo.curiosities.common.item.curio.belt.*;
 import com.goo.curiosities.common.item.curio.body.CensorshipCloak;
 import com.goo.curiosities.common.item.curio.body.CloakOfInvisibility;
@@ -200,6 +201,14 @@ public class CuriositiesItems {
                                     .lines(1)
                                     .pop().build())));
 
+    public static final Holder<Item> HIKERS_BOOTS = ITEMS.register("hikers_boots",
+            () -> new HikersBoots(new Item.Properties()
+                    .component(CuriositiesDataComponents.ITEM_DESCRIPTIONS,
+                            ItemDescriptions.forItem("hikers_boots")
+                                    .add(DescriptionType.ON_TRUE_MELEE_HIT)
+                                    .lines(1)
+                                    .pop().build())));
+
     public static final Holder<Item> HONEY_BOOTS = ITEMS.register("honey_boots",
             () -> new HoneyBoots(new Item.Properties()
                     .component(CuriositiesDataComponents.ITEM_DESCRIPTIONS,
@@ -210,6 +219,7 @@ public class CuriositiesItems {
                     .withAttributes(
                             new AttributeContainer(Attributes.JUMP_STRENGTH, Double.NEGATIVE_INFINITY, ADD_VALUE)
                     ));
+
     public static final Holder<Item> CLIMBING_CLAWS = ITEMS.register("climbing_claws",
             () -> new CuriositiesCurioItem(new Item.Properties())
                     .withAttributes(
@@ -410,6 +420,7 @@ public class CuriositiesItems {
                             new AttributeContainer(GLAttributes.STEALTH, 0.25, ADD_VALUE),
                             new AttributeContainer(Attributes.MAX_HEALTH, 3, ADD_VALUE)
                     ));
+
     public static final Holder<Item> OGRES_HEART = ITEMS.register("ogres_heart",
             () -> new OgresHeart(new Item.Properties()
                     .component(CuriositiesDataComponents.ITEM_DESCRIPTIONS,
@@ -614,6 +625,14 @@ public class CuriositiesItems {
                                     .lines(1)
                                     .pop().build())));
 
+    public static final Holder<Item> WIND_CHARGED_FISHING_HOOK = ITEMS.register("wind_charged_fishing_hook",
+            () -> new WindChargedFishingHook(new Item.Properties()
+                    .component(CuriositiesDataComponents.ITEM_DESCRIPTIONS,
+                            ItemDescriptions.forItem("wind_charged_fishing_hook")
+                                    .add(DescriptionType.PASSIVE)
+                                    .lines(1)
+                                    .pop().build())));
+
     public static final Holder<Item> ECHOING_FISHING_HOOK = ITEMS.register("echoing_fishing_hook",
             () -> new EchoingFishingHook(new Item.Properties()
                     .component(CuriositiesDataComponents.ITEM_DESCRIPTIONS,
@@ -658,6 +677,15 @@ public class CuriositiesItems {
                             new AttributeContainer(GLAttributes.FISHING_LUCK, 5, ADD_VALUE)
                     ));
 
+
+    public static final Holder<Item> ATG_MISSILE_MK1 = ITEMS.register("atg_missile_mk1",
+            () -> new AtGMissileMk1(new Item.Properties()
+                    .component(CuriositiesDataComponents.ITEM_DESCRIPTIONS,
+                            ItemDescriptions.forItem("atg_missile_mk1")
+                                    .add(DescriptionType.ON_HIT)
+                                    .lines(1)
+                                    .pop().build()))
+                    );
 
     public static final Holder<Item> MAGIC_QUIVER = ITEMS.register("magic_quiver",
             () -> new QuiverCurioItem(new Item.Properties())
@@ -849,6 +877,18 @@ public class CuriositiesItems {
                             new AttributeContainer(GLAttributes.ARROW_DAMAGE, 0.1, ADD_VALUE)
                     ));
 
+    public static final Holder<Item> EXPLOSIVE_QUIVER = ITEMS.register("explosive_quiver",
+            () -> new QuiverCurioItem(new Item.Properties()
+                    .component(CuriositiesDataComponents.ITEM_DESCRIPTIONS,
+                            ItemDescriptions.forItem("explosive_quiver")
+                                    .add(DescriptionType.ON_ARROW_HIT)
+                                    .lines(1)
+                                    .pop().build()))
+                    .withAttributes(
+                            new AttributeContainer(GLAttributes.ARROW_VELOCITY, 0.5, ADD_VALUE),
+                            new AttributeContainer(GLAttributes.ARROW_DAMAGE, 0.1, ADD_VALUE)
+                    ));
+
     public static final Holder<Item> INFINIQUIVER = ITEMS.register("infiniquiver",
             () -> new QuiverCurioItem(new Item.Properties()
                     .component(CuriositiesDataComponents.ITEM_DESCRIPTIONS,
@@ -865,6 +905,28 @@ public class CuriositiesItems {
             () -> new MagneticArrowhead(new Item.Properties()
                     .component(CuriositiesDataComponents.ITEM_DESCRIPTIONS,
                             ItemDescriptions.forItem("magnetic_arrowhead")
+                                    .add(DescriptionType.PASSIVE)
+                                    .lines(1)
+                                    .pop().build())));
+
+    public static final Holder<Item> GASOLINE = ITEMS.register("gasoline",
+            () -> new Gasoline(new Item.Properties()
+                    .component(CuriositiesDataComponents.ITEM_DESCRIPTIONS,
+                            ItemDescriptions.forItem("gasoline")
+                                    .add(DescriptionType.LORE)
+                                    .lines(1)
+                                    .pop()
+                                    .add(DescriptionType.ON_KILL)
+                                    .lines(2)
+                                    .pop()
+                                    .add(DescriptionType.PASSIVE)
+                                    .lines(1)
+                                    .pop().build())));
+
+    public static final Holder<Item> FOCUS_CRYSTAL = ITEMS.register("focus_crystal",
+            () -> new FocusCrystal(new Item.Properties()
+                    .component(CuriositiesDataComponents.ITEM_DESCRIPTIONS,
+                            ItemDescriptions.forItem("focus_crystal")
                                     .add(DescriptionType.PASSIVE)
                                     .lines(1)
                                     .pop().build())));
@@ -1127,7 +1189,7 @@ public class CuriositiesItems {
             () -> new CrownOfTyranny(new Item.Properties()
                     .component(CuriositiesDataComponents.ITEM_DESCRIPTIONS,
                             ItemDescriptions.forItem("crown_of_tyranny")
-                                    .add(DescriptionType.PASSIVE)
+                                    .add(DescriptionType.ON_HIT)
                                     .lines(1)
                                     .pop().build())));
 
